@@ -7,7 +7,14 @@
 </head>
 <body>
   <script>
-    
+    let hora = Number(prompt("Ingrese la hora"));
+    let am = ""
+    if (hora >= 0 && hora <= 12){
+      am = "am"
+    }else{
+      am = "pm"
+    }
+    console.log(`La hora es ${hora} ${am}`)
   </script>
 </body>
 </html>

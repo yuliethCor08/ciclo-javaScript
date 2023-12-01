@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let azar = Math.floor(Math.random()*100 + 1)
+        let num = Number(prompt("Ingrese un número aleatorio del 1 al 100"))
+        if (num < 1 || num > 100){
+            alert("Número fuera de rango")
+        } else{
+            while (azar != num) {
+                num = Number(prompt("Ingrese un número aleatorio del 1 al 100"))
+
+                if (num > azar){
+                    alert("No lo lograste, el numero es menor")
+                }
+                else if (num < azar){
+                    alert("No lo lograste, el número es mayor")
+                }
+                else{
+                    alert("Has Ganado!")
+                    break
+                }
+                    
+            }
+        }
+    </script>
+</body>
+</html>

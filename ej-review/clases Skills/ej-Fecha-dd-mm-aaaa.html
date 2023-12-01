@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let dd = Number(prompt("Ingrese el día","dd"))
+        let mm = Number(prompt("Ingrese el mes","mm"))
+        let aaaa = Number(prompt("Ingrese el año","aaaa"))
+        
+        if (aaaa > 0){
+
+            switch (mm) {
+                case 1:
+                    if (dd <0 && dd>31){
+                        alert("La fecha no es valida")
+                    }else{
+                        mm = "enero"
+                        alert(`La fecha es válida: ${dd} de ${mm} de ${aaaa}`)
+                    }
+                    break;
+                case 2:
+                    if (aaaa/4 == 0){
+                        if (dd <0 && dd>29){
+                        alert("La fecha no es valida")
+                        }else{
+                            mm = "febrero"
+                            alert(`La fecha es válida: ${dd} de ${mm} de ${aaaa}`)
+                        }
+                    }else{
+                        if (dd <0 && dd>28){
+                        alert("La fecha no es valida")
+                        }else{
+                            mm = "febrero"
+                            alert(`La fecha es válida: ${dd} de ${mm} de ${aaaa}`)
+                        } 
+                    }
+                    
+                    break;
+                case 3:
+                    if (dd <0 && dd>31){
+                        alert("La fecha no es valida")
+                    }else{
+                        mm = "marzo"
+                        alert(`La fecha es válida: ${dd} de ${mm} de ${aaaa}`)
+                    }
+                    break;
+                case 4:
+                    if (dd <0 && dd>30){
+                        alert("La fecha no es valida")
+                    }else{
+                        mm = "abril"
+                        alert(`La fecha es válida: ${dd} de ${mm} de ${aaaa}`)
+                    }
+                    break;
+                case 5:
+                    if (dd <0 && dd>31){
+                        alert("La fecha no es valida")
+                    }else{
+                        mm = "mayo"
+                        alert(`La fecha es válida: ${dd} de ${mm} de ${aaaa}`)
+                    }
+                    break;
+                case 6:
+                    if (dd <0 && dd>30){
+                        alert("La fecha no es valida")
+                    }else{
+                        mm = "junio"
+                        alert(`La fecha es válida: ${dd} de ${mm} de ${aaaa}`)
+                    }
+                    break;
+                case 7:
+                    if (dd <0 && dd>31){
+                        alert("La fecha no es valida")
+                    }else{
+                        mm = "julio"
+                        alert(`La fecha es válida: ${dd} de ${mm} de ${aaaa}`)
+                    }
+                    break;
+                case 8:
+                    if (dd <0 && dd>31){
+                        alert("La fecha no es valida")
+                    }else{
+                        mm = "agosto"
+                        alert(`La fecha es válida: ${dd} de ${mm} de ${aaaa}`)
+                    }
+                    break;
+                case 9:
+                    if (dd <0 && dd>30){
+                        alert("La fecha no es valida")
+                    }else{
+                        mm = "septiembre"
+                        alert(`La fecha es válida: ${dd} de ${mm} de ${aaaa}`)
+                    }
+                    break;
+                case 10:
+                    if (dd <0 && dd>31){
+                        alert("La fecha no es valida")
+                    }else{
+                        mm = "octubre"
+                        alert(`La fecha es válida: ${dd} de ${mm} de ${aaaa}`)
+                    }
+                    break;
+                case 11:
+                    if (dd <0 && dd>30){
+                        alert("La fecha no es valida")
+                    }else{
+                        mm = "noviembre"
+                        alert(`La fecha es válida: ${dd} de ${mm} de ${aaaa}`)
+                    }
+                    break;
+                case 12:
+                    if (dd <0 && dd>31){
+                        alert("La fecha no es valida")
+                    }else{
+                        mm = "diciembre"
+                        alert(`La fecha es válida: ${dd} de ${mm} de ${aaaa}`)
+                    }
+                    break;
+            
+                default:
+                    alert("La fecha no es valida")
+                    break;
+            }
+        } else{
+            alert("La fecha no es válida")
+        }
+    </script>
+</body>
+</html>
