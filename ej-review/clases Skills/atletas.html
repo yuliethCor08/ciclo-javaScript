@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nAtletas = Number(prompt("Ingrese la cantidad de atletas"))
+        let records = 0;
+        let nomGanador = ""
+        for (let i = 0; i < nAtletas; i++) {
+            let nombre = prompt("Digite su nombre");
+            let salto = Number(prompt("Digite las marcas de salto en metros"))
+            if (salto > records) {
+                records = salto;
+                nomGanador = nombre
+            } 
+        }
+        alert(`Records: ${nomGanador}; ${records}`)
+    </script>
+</body>
+</html>

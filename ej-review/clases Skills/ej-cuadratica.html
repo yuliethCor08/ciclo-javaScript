@@ -7,9 +7,52 @@
 </head>
 <body>
     <script>
+        function cuadratica(coef, coef2, coef3) {
+            let raiz = coef2**2 - 4 * coef * coef3
+            let resultado = ""
+            if (raiz < 0){
+                resultado == "NaN"
+            } else {
+                let x1 = (-coef2 + raiz ** 0.5) / (2* coef)
+                let x2 = (-coef2 - raiz ** 0.5) / (2* coef)
+                resultado = `X1 = ${x1}\n${x2}\n`
+            }
+            return resultado;
+        }
+
         let coef = Number(prompt("Ingrese el primer coeficiente"))
-        let coef2 = Number(prompt("Ingrese el segundo coeficiente"))
-        let coef3 = Number(prompt("Ingrese el tercer coeficiente"))
+        if(a==0){
+            alert("No es una ecuación cuadratica")
+        } else{
+            let coef2 = Number(prompt("Ingrese el segundo coeficiente"))
+            let coef3 = Number(prompt("Ingrese el tercer coeficiente"))
+            let r = cuadratica(coef, coef2, coef3);
+            if(r.length > 0 && r != "NaN"){
+                alert(r)
+            } else {
+                let x1 = (-coef2 + raiz ** 0.5) / (2* coef)
+                let x2 = (-coef2 - raiz ** 0.5) / (2* coef)
+                resultado = `X1 = ${x1}`
+            }
+        }
+
+        const raizCuad = (coef, coef2, coef3) => coef2**2 - 4 * coef * coef3
+        const cuadra = f
+        if(a==0){
+            alert("No es una ecuación cuadratica")
+        } else{
+            let coef2 = Number(prompt("Ingrese el segundo coeficiente"))
+            let coef3 = Number(prompt("Ingrese el tercer coeficiente"))
+            let r = cuadratica(coef, coef2, coef3);
+            if(r.length > 0 && r != "NaN"){
+                alert(r)
+            } else {
+                let x1 = (-coef2 + raiz ** 0.5) / (2* coef)
+                let x2 = (-coef2 - raiz ** 0.5) / (2* coef)
+                resultado = `X1 = ${x1}`
+            }
+        }
+        
 
         let x = (-coef2/(coef2**4*coef*coef3))/2*coef;
         alert(x)
