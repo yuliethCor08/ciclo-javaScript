@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nomArticulo = prompt("Ingrese el nombre del articulo")
+        
+        const leerArticulo = function (msg){
+            let articulo;
+            let repita;
+            do {
+                articulo = Number(prompt(msg))
+                if (articulo === 0) {
+                    articulo = undefined;
+                    break;
+                } else if (isNaN(articulo) || articulo < 1 || articulo > 5) {
+                    alert("Ingrese un valor mayoa a 0")
+                    repita = true
+                }
+                
+            } while (repita);
+            return articulo
+        }
+
+        let precio = Number(prompt("Ingrese el precio del prodecto que desea llevar"))
+        if(precio != undefined){
+            let cantidad = Number(prompt(`Ingrese la cantidad de ${nomArticulo} que desea llevar`))
+            if (cantidad != undefined) {
+                    alert(`El total a pagar de ${articulo} es de: ${cantidad * precio}`)
+            }
+        }
+
+
+    </script>
+</body>
+</html>
