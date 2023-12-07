@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+          border: collapse;
+          Width: 100%;
+        }
+        th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+          padding: 8px;
+          text-align: center;
+        }
+      </style>
+</head>
+<body>
+    <script>
+
+        function agregarPrestamo() {
+            mostrarPrestamo()
+            calcularPrestamo()
+            let montCredit = document.getElementById('montoCredito');
+            let tasInteres = document.getElementById('tasaIntereses');
+            let pagMensual = document.getElementById('pagoMensual');
+            
+            
+        }
+
+        function mostrarPrestamo() {
+            agregarPrestamo()
+
+            document.getElementById('monto').innerHTML = montCredit;
+            document.getElementById('tasaInt').innerText = tasInteres;
+            document.getElementById('numMensual').innerText = pagMensual;
+            document.getElementById('valTotal').innerText = valTotal;
+            document.getElementById('valMensual').innerText = valMensual;
+            calcularPrestamo()
+            
+        }
+
+        function calcularPrestamo() {
+            let valTotal = (montCredit * tasInteres) + montCredit
+            let valMensual = valTotal / pagMensual
+            agregarPrestamo()
+            mostrarPrestamo()
+            
+        }
+        return calcularPrestamo
+    </script>
+
+    <form action="">
+        <label for="montoCredito">Monto del credito</label>
+        <input type="text" id="montoCredito" name="montoCredito">
+        <br><br>
+        <label for="tasaIntereses">Tasa de intereses (Anual)</label>
+        <input type="text" id="tasaIntereses" name="tasaIntereses">
+        <br><br>
+        <label for="pagoMensual">Número de pagos mensuales</label>
+        <input type="text" id="pagoMensual" name="pagoMensual">
+        <br><br>
+        <button type="button" onclick="agregarPrestamo()">Calcular</button>
+
+    </form>
+    
+    <table>
+        <tr>
+            <th>Monto del crédito</th>
+            <td id="monto"></td>
+        </tr>
+        <tr>
+            <th>Tasa de interés (Anual)</th>
+            <td id="tasaInt"></td>
+        </tr>
+        <tr>
+            <th>Número de pagos mensuales</th>
+            <td id="numMensual"></td>
+        </tr>
+        <tr>
+            <th>Valor total</th>
+            <td id="valTotal"></td>
+        </tr>
+        <tr>
+            <th>Valor mensual</th>
+            <td id="valMensual"></td>
+        </tr>
+    </table>
+    
+</body>
+</html>

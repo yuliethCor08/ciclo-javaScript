@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        table {
+          border: collapse;
+          Width: 100%;
+        }
+        th, td {
+          border: 1px solid black;
+          padding: 8px;
+          text-align: center;
+        }
+      </style>
+    </head>
+    <body>
+      <h2>Facturas Pendientes</h2>
+      <form id="facturaForm">
+        <label for="numeroFactura">Número de Factura:</label>
+        <input type="text" id="numeroFactura" name="numeroFactura">
+        <label for="costeFactura">Coste de la Factura:</label>
+        <input type="text" id="costeFactura" name="costeFactura">
+        <button type="button" onclick="agregarFactura()">Agregar Factura</button>
+      </form>
+      
+      <h3>Listado de Facturas</h3>
+      <table id="facturaTable">
+        <tr>
+          <th>Número de Factura</th>
+          <th>Coste de la Factura</th>
+        </tr>
+    </table>
+    <h3>Resumen</h3>
+    <p>Cantidad de Facturas Ingresadas: <span id="cantidadIngresadas">0</span></p>
+    <p>Cantidad Cobrada: <span id="cantidadCobrada">0</span></p>
+    <p>Cantidad Pendiente de Cobro: <span id="cantidadPendiente">0</span></p>
+  
+    <script>
+      let facturas = {};
+  
+      function agregarFactura() {
+        let numeroFactura = document.getElementById('numeroFactura').value;
+        let costeFactura = document.getElementById('costeFactura').value;
+  
+        facturas[numeroFactura] = costeFactura;
+  
+        mostrarFacturas();
+        calcularResumen();
+      }
+  
+      function pagarFactura(numeroFactura) {
+        delete facturas[numeroFactura];
+  
+        mostrarFacturas();
+        calcularResumen();
+      }
+  
+      function mostrarFacturas() {
+        let table = document.getElementById('facturaTable');
+        table.innerHTML = '<tr><th>Número de Factura</th><th>Coste de la Factura</th></tr>';
+  
+        for (let factura in facturas) {
+            let row = table.insertRow(-1);
+            let cell1 = row.insertCell(0);
+            let cell2 = row.insertCell(1);
+            let cell3 = row.insertCell(2);
+            cell1.innerHTML = factura;
+            cell2.innerHTML = facturas[factura];
+            cell3.innerHTML = <button onclick="pagarFactura(\'' + factura + '\')">Pagar</button>;
+      }
+    }
+
+    function calcularResumen() {
+      let cantidadIngresadas = Object.keys(facturas).length;
+      let cantidadCobrada = 0;
+      for (let factura in facturas) {
+        cantidadCobrada += parseFloat(facturas[factura]);
+      }
+      let cantidadPendiente = cantidadCobrada;
+
+      document.getElementById('cantidadIngresadas').innerText = cantidadIngresadas;
+      document.getElementById('cantidadCobrada').innerText = cantidadCobrada;
+      document.getElementById('cantidadPendiente').innerText = cantidadPendiente;
+    }
+  </script>
+  
+    
+</body>
+</html>
